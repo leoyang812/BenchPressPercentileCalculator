@@ -1,0 +1,498 @@
+{
+  "by_age": {
+    "male": {
+      "15": [
+        {"bench": 88, "percentile": 5},
+        {"bench": 131, "percentile": 20},
+        {"bench": 185, "percentile": 50},
+        {"bench": 248, "percentile": 80},
+        {"bench": 317, "percentile": 95}
+      ],
+      "20": [
+        {"bench": 101, "percentile": 5},
+        {"bench": 150, "percentile": 20},
+        {"bench": 211, "percentile": 50},
+        {"bench": 284, "percentile": 80},
+        {"bench": 363, "percentile": 95}
+      ],
+      "25": [
+        {"bench": 103, "percentile": 5},
+        {"bench": 154, "percentile": 20},
+        {"bench": 217, "percentile": 50},
+        {"bench": 291, "percentile": 80},
+        {"bench": 372, "percentile": 95}
+      ],
+      "30": [
+        {"bench": 103, "percentile": 5},
+        {"bench": 154, "percentile": 20},
+        {"bench": 217, "percentile": 50},
+        {"bench": 291, "percentile": 80},
+        {"bench": 372, "percentile": 95}
+      ],
+      "35": [
+        {"bench": 103, "percentile": 5},
+        {"bench": 154, "percentile": 20},
+        {"bench": 217, "percentile": 50},
+        {"bench": 291, "percentile": 80},
+        {"bench": 372, "percentile": 95}
+      ],
+      "40": [
+        {"bench": 103, "percentile": 5},
+        {"bench": 154, "percentile": 20},
+        {"bench": 217, "percentile": 50},
+        {"bench": 291, "percentile": 80},
+        {"bench": 372, "percentile": 95}
+      ],
+      "45": [
+        {"bench": 98, "percentile": 5},
+        {"bench": 146, "percentile": 20},
+        {"bench": 206, "percentile": 50},
+        {"bench": 276, "percentile": 80},
+        {"bench": 353, "percentile": 95}
+      ],
+      "50": [
+        {"bench": 92, "percentile": 5},
+        {"bench": 137, "percentile": 20},
+        {"bench": 193, "percentile": 50},
+        {"bench": 259, "percentile": 80},
+        {"bench": 331, "percentile": 95}
+      ],
+      "55": [
+        {"bench": 85, "percentile": 5},
+        {"bench": 127, "percentile": 20},
+        {"bench": 179, "percentile": 50},
+        {"bench": 240, "percentile": 80},
+        {"bench": 306, "percentile": 95}
+      ],
+      "60": [
+        {"bench": 78, "percentile": 5},
+        {"bench": 115, "percentile": 20},
+        {"bench": 163, "percentile": 50},
+        {"bench": 219, "percentile": 80},
+        {"bench": 280, "percentile": 95}
+      ],
+      "65": [
+        {"bench": 70, "percentile": 5},
+        {"bench": 104, "percentile": 20},
+        {"bench": 147, "percentile": 50},
+        {"bench": 198, "percentile": 80},
+        {"bench": 253, "percentile": 95}
+      ],
+      "70": [
+        {"bench": 63, "percentile": 5},
+        {"bench": 94, "percentile": 20},
+        {"bench": 132, "percentile": 50},
+        {"bench": 177, "percentile": 80},
+        {"bench": 227, "percentile": 95}
+      ],
+      "75": [
+        {"bench": 56, "percentile": 5},
+        {"bench": 84, "percentile": 20},
+        {"bench": 118, "percentile": 50},
+        {"bench": 159, "percentile": 80},
+        {"bench": 203, "percentile": 95}
+      ],
+      "80": [
+        {"bench": 50, "percentile": 5},
+        {"bench": 75, "percentile": 20},
+        {"bench": 106, "percentile": 50},
+        {"bench": 142, "percentile": 80},
+        {"bench": 181, "percentile": 95}
+      ],
+      "85": [
+        {"bench": 45, "percentile": 5},
+        {"bench": 67, "percentile": 20},
+        {"bench": 95, "percentile": 50},
+        {"bench": 127, "percentile": 80},
+        {"bench": 163, "percentile": 95}
+      ],
+      "90": [
+        {"bench": 41, "percentile": 5},
+        {"bench": 60, "percentile": 20},
+        {"bench": 85, "percentile": 50},
+        {"bench": 115, "percentile": 80},
+        {"bench": 146, "percentile": 95}
+      ]
+    },
+    "female": {
+      "15": [
+        {"bench": 33, "percentile": 5},
+        {"bench": 59, "percentile": 20},
+        {"bench": 95, "percentile": 50},
+        {"bench": 139, "percentile": 80},
+        {"bench": 190, "percentile": 95}
+      ],
+      "20": [
+        {"bench": 37, "percentile": 5},
+        {"bench": 67, "percentile": 20},
+        {"bench": 109, "percentile": 50},
+        {"bench": 159, "percentile": 80},
+        {"bench": 217, "percentile": 95}
+      ],
+      "25": [
+        {"bench": 38, "percentile": 5},
+        {"bench": 69, "percentile": 20},
+        {"bench": 111, "percentile": 50},
+        {"bench": 164, "percentile": 80},
+        {"bench": 223, "percentile": 95}
+      ],
+      "30": [
+        {"bench": 38, "percentile": 5},
+        {"bench": 69, "percentile": 20},
+        {"bench": 111, "percentile": 50},
+        {"bench": 164, "percentile": 80},
+        {"bench": 223, "percentile": 95}
+      ],
+      "35": [
+        {"bench": 38, "percentile": 5},
+        {"bench": 69, "percentile": 20},
+        {"bench": 111, "percentile": 50},
+        {"bench": 164, "percentile": 80},
+        {"bench": 223, "percentile": 95}
+      ],
+      "40": [
+        {"bench": 38, "percentile": 5},
+        {"bench": 69, "percentile": 20},
+        {"bench": 111, "percentile": 50},
+        {"bench": 164, "percentile": 80},
+        {"bench": 223, "percentile": 95}
+      ],
+      "45": [
+        {"bench": 36, "percentile": 5},
+        {"bench": 66, "percentile": 20},
+        {"bench": 106, "percentile": 50},
+        {"bench": 155, "percentile": 80},
+        {"bench": 211, "percentile": 95}
+      ],
+      "50": [
+        {"bench": 34, "percentile": 5},
+        {"bench": 62, "percentile": 20},
+        {"bench": 99, "percentile": 50},
+        {"bench": 146, "percentile": 80},
+        {"bench": 198, "percentile": 95}
+      ],
+      "55": [
+        {"bench": 32, "percentile": 5},
+        {"bench": 57, "percentile": 20},
+        {"bench": 92, "percentile": 50},
+        {"bench": 135, "percentile": 80},
+        {"bench": 183, "percentile": 95}
+      ],
+      "60": [
+        {"bench": 29, "percentile": 5},
+        {"bench": 52, "percentile": 20},
+        {"bench": 84, "percentile": 50},
+        {"bench": 123, "percentile": 80},
+        {"bench": 167, "percentile": 95}
+      ],
+      "65": [
+        {"bench": 26, "percentile": 5},
+        {"bench": 47, "percentile": 20},
+        {"bench": 76, "percentile": 50},
+        {"bench": 111, "percentile": 80},
+        {"bench": 151, "percentile": 95}
+      ],
+      "70": [
+        {"bench": 23, "percentile": 5},
+        {"bench": 42, "percentile": 20},
+        {"bench": 68, "percentile": 50},
+        {"bench": 100, "percentile": 80},
+        {"bench": 136, "percentile": 95}
+      ],
+      "75": [
+        {"bench": 21, "percentile": 5},
+        {"bench": 38, "percentile": 20},
+        {"bench": 61, "percentile": 50},
+        {"bench": 89, "percentile": 80},
+        {"bench": 121, "percentile": 95}
+      ],
+      "80": [
+        {"bench": 19, "percentile": 5},
+        {"bench": 34, "percentile": 20},
+        {"bench": 54, "percentile": 50},
+        {"bench": 80, "percentile": 80},
+        {"bench": 109, "percentile": 95}
+      ],
+      "85": [
+        {"bench": 17, "percentile": 5},
+        {"bench": 30, "percentile": 20},
+        {"bench": 49, "percentile": 50},
+        {"bench": 71, "percentile": 80},
+        {"bench": 97, "percentile": 95}
+      ],
+      "90": [
+        {"bench": 15, "percentile": 5},
+        {"bench": 27, "percentile": 20},
+        {"bench": 44, "percentile": 50},
+        {"bench": 64, "percentile": 80},
+        {"bench": 88, "percentile": 95}
+      ]
+    }
+  },
+  "by_weight": {
+    "male": {
+      "110": [
+        {"bench": 53, "percentile": 5},
+        {"bench": 84, "percentile": 20},
+        {"bench": 125, "percentile": 50},
+        {"bench": 173, "percentile": 80},
+        {"bench": 226, "percentile": 95}
+      ],
+      "120": [
+        {"bench": 63, "percentile": 5},
+        {"bench": 97, "percentile": 20},
+        {"bench": 140, "percentile": 50},
+        {"bench": 191, "percentile": 80},
+        {"bench": 247, "percentile": 95}
+      ],
+      "130": [
+        {"bench": 73, "percentile": 5},
+        {"bench": 109, "percentile": 20},
+        {"bench": 154, "percentile": 50},
+        {"bench": 208, "percentile": 80},
+        {"bench": 266, "percentile": 95}
+      ],
+      "140": [
+        {"bench": 83, "percentile": 5},
+        {"bench": 121, "percentile": 20},
+        {"bench": 169, "percentile": 50},
+        {"bench": 224, "percentile": 80},
+        {"bench": 285, "percentile": 95}
+      ],
+      "150": [
+        {"bench": 93, "percentile": 5},
+        {"bench": 133, "percentile": 20},
+        {"bench": 182, "percentile": 50},
+        {"bench": 240, "percentile": 80},
+        {"bench": 302, "percentile": 95}
+      ],
+      "160": [
+        {"bench": 102, "percentile": 5},
+        {"bench": 144, "percentile": 20},
+        {"bench": 196, "percentile": 50},
+        {"bench": 255, "percentile": 80},
+        {"bench": 319, "percentile": 95}
+      ],
+      "170": [
+        {"bench": 112, "percentile": 5},
+        {"bench": 155, "percentile": 20},
+        {"bench": 209, "percentile": 50},
+        {"bench": 270, "percentile": 80},
+        {"bench": 336, "percentile": 95}
+      ],
+      "180": [
+        {"bench": 121, "percentile": 5},
+        {"bench": 166, "percentile": 20},
+        {"bench": 221, "percentile": 50},
+        {"bench": 284, "percentile": 80},
+        {"bench": 352, "percentile": 95}
+      ],
+      "190": [
+        {"bench": 130, "percentile": 5},
+        {"bench": 177, "percentile": 20},
+        {"bench": 234, "percentile": 50},
+        {"bench": 298, "percentile": 80},
+        {"bench": 367, "percentile": 95}
+      ],
+      "200": [
+        {"bench": 139, "percentile": 5},
+        {"bench": 187, "percentile": 20},
+        {"bench": 246, "percentile": 50},
+        {"bench": 312, "percentile": 80},
+        {"bench": 382, "percentile": 95}
+      ],
+      "210": [
+        {"bench": 148, "percentile": 5},
+        {"bench": 197, "percentile": 20},
+        {"bench": 257, "percentile": 50},
+        {"bench": 325, "percentile": 80},
+        {"bench": 397, "percentile": 95}
+      ],
+      "220": [
+        {"bench": 156, "percentile": 5},
+        {"bench": 207, "percentile": 20},
+        {"bench": 269, "percentile": 50},
+        {"bench": 338, "percentile": 80},
+        {"bench": 411, "percentile": 95}
+      ],
+      "230": [
+        {"bench": 165, "percentile": 5},
+        {"bench": 217, "percentile": 20},
+        {"bench": 280, "percentile": 50},
+        {"bench": 350, "percentile": 80},
+        {"bench": 425, "percentile": 95}
+      ],
+      "240": [
+        {"bench": 173, "percentile": 5},
+        {"bench": 227, "percentile": 20},
+        {"bench": 291, "percentile": 50},
+        {"bench": 362, "percentile": 80},
+        {"bench": 438, "percentile": 95}
+      ],
+      "250": [
+        {"bench": 181, "percentile": 5},
+        {"bench": 236, "percentile": 20},
+        {"bench": 301, "percentile": 50},
+        {"bench": 374, "percentile": 80},
+        {"bench": 451, "percentile": 95}
+      ],
+      "260": [
+        {"bench": 190, "percentile": 5},
+        {"bench": 245, "percentile": 20},
+        {"bench": 312, "percentile": 50},
+        {"bench": 386, "percentile": 80},
+        {"bench": 464, "percentile": 95}
+      ],
+      "270": [
+        {"bench": 197, "percentile": 5},
+        {"bench": 254, "percentile": 20},
+        {"bench": 322, "percentile": 50},
+        {"bench": 397, "percentile": 80},
+        {"bench": 476, "percentile": 95}
+      ],
+      "280": [
+        {"bench": 205, "percentile": 5},
+        {"bench": 263, "percentile": 20},
+        {"bench": 332, "percentile": 50},
+        {"bench": 408, "percentile": 80},
+        {"bench": 488, "percentile": 95}
+      ],
+      "290": [
+        {"bench": 213, "percentile": 5},
+        {"bench": 272, "percentile": 20},
+        {"bench": 341, "percentile": 50},
+        {"bench": 419, "percentile": 80},
+        {"bench": 500, "percentile": 95}
+      ],
+      "300": [
+        {"bench": 220, "percentile": 5},
+        {"bench": 280, "percentile": 20},
+        {"bench": 351, "percentile": 50},
+        {"bench": 429, "percentile": 80},
+        {"bench": 511, "percentile": 95}
+      ],
+      "310": [
+        {"bench": 228, "percentile": 5},
+        {"bench": 289, "percentile": 20},
+        {"bench": 360, "percentile": 50},
+        {"bench": 439, "percentile": 80},
+        {"bench": 523, "percentile": 95}
+      ]
+    },
+    "female": {
+      "110": [
+        {"bench": 27, "percentile": 5},
+        {"bench": 52, "percentile": 20},
+        {"bench": 87, "percentile": 50},
+        {"bench": 130, "percentile": 80},
+        {"bench": 180, "percentile": 95}
+      ],
+      "120": [
+        {"bench": 32, "percentile": 5},
+        {"bench": 58, "percentile": 20},
+        {"bench": 94, "percentile": 50},
+        {"bench": 139, "percentile": 80},
+        {"bench": 190, "percentile": 95}
+      ],
+      "130": [
+        {"bench": 36, "percentile": 5},
+        {"bench": 63, "percentile": 20},
+        {"bench": 101, "percentile": 50},
+        {"bench": 148, "percentile": 80},
+        {"bench": 200, "percentile": 95}
+      ],
+      "140": [
+        {"bench": 40, "percentile": 5},
+        {"bench": 69, "percentile": 20},
+        {"bench": 108, "percentile": 50},
+        {"bench": 156, "percentile": 80},
+        {"bench": 209, "percentile": 95}
+      ],
+      "150": [
+        {"bench": 43, "percentile": 5},
+        {"bench": 74, "percentile": 20},
+        {"bench": 114, "percentile": 50},
+        {"bench": 163, "percentile": 80},
+        {"bench": 218, "percentile": 95}
+      ],
+      "160": [
+        {"bench": 47, "percentile": 5},
+        {"bench": 79, "percentile": 20},
+        {"bench": 120, "percentile": 50},
+        {"bench": 170, "percentile": 80},
+        {"bench": 227, "percentile": 95}
+      ],
+      "170": [
+        {"bench": 51, "percentile": 5},
+        {"bench": 83, "percentile": 20},
+        {"bench": 126, "percentile": 50},
+        {"bench": 177, "percentile": 80},
+        {"bench": 235, "percentile": 95}
+      ],
+      "180": [
+        {"bench": 55, "percentile": 5},
+        {"bench": 88, "percentile": 20},
+        {"bench": 132, "percentile": 50},
+        {"bench": 184, "percentile": 80},
+        {"bench": 242, "percentile": 95}
+      ],
+      "190": [
+        {"bench": 58, "percentile": 5},
+        {"bench": 93, "percentile": 20},
+        {"bench": 137, "percentile": 50},
+        {"bench": 191, "percentile": 80},
+        {"bench": 250, "percentile": 95}
+      ],
+      "200": [
+        {"bench": 62, "percentile": 5},
+        {"bench": 97, "percentile": 20},
+        {"bench": 143, "percentile": 50},
+        {"bench": 197, "percentile": 80},
+        {"bench": 257, "percentile": 95}
+      ],
+      "210": [
+        {"bench": 65, "percentile": 5},
+        {"bench": 101, "percentile": 20},
+        {"bench": 148, "percentile": 50},
+        {"bench": 203, "percentile": 80},
+        {"bench": 264, "percentile": 95}
+      ],
+      "220": [
+        {"bench": 68, "percentile": 5},
+        {"bench": 105, "percentile": 20},
+        {"bench": 153, "percentile": 50},
+        {"bench": 209, "percentile": 80},
+        {"bench": 270, "percentile": 95}
+      ],
+      "230": [
+        {"bench": 72, "percentile": 5},
+        {"bench": 109, "percentile": 20},
+        {"bench": 157, "percentile": 50},
+        {"bench": 214, "percentile": 80},
+        {"bench": 277, "percentile": 95}
+      ],
+      "240": [
+        {"bench": 75, "percentile": 5},
+        {"bench": 113, "percentile": 20},
+        {"bench": 162, "percentile": 50},
+        {"bench": 220, "percentile": 80},
+        {"bench": 283, "percentile": 95}
+      ],
+      "250": [
+        {"bench": 78, "percentile": 5},
+        {"bench": 117, "percentile": 20},
+        {"bench": 167, "percentile": 50},
+        {"bench": 225, "percentile": 80},
+        {"bench": 289, "percentile": 95}
+      ],
+      "260": [
+        {"bench": 81, "percentile": 5},
+        {"bench": 121, "percentile": 20},
+        {"bench": 171, "percentile": 50},
+        {"bench": 230, "percentile": 80},
+        {"bench": 295, "percentile": 95}
+      ]
+    }
+  }
+}
+  

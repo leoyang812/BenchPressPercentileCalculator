@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Calculator</title>
+</head>
+<body>
+  <h1>Test Calculator</h1>
+  <button onclick="testCalculation()">Test Calculation</button>
+  <div id="result"></div>
+
+  <script>
+    async function fetchData() {
+      try {
+        console.log('Fetching data...');
+        const response = await fetch('data/percentiles.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data');
+        }
+        const data = await response.json();
+        console.log('Data loaded:', data);
+        return data;
+      } catch (error) {
+        console.error('Error:', error);
+        throw error;
+      }
+    }
+
+    function interpolate(data, bench) {
+      if (!data || data.length === 0) return 0;
+      
+      if (bench <= data[0].bench) return data[0].percentile;
+      if (bench >= data[data.length - 1].bench) return data[data.length - 1].percentile;
+      
+      for (let i = 0; i < data.length - 1; i++) {
+        const a = data[i];
+        const b = data[i + 1];
+        
+        if (bench >= a.bench && bench <= b.bench) {
+          const ratio = (bench - a.bench) / (b.bench - a.bench);
+          return Math.round(a.percentile + ratio * (b.percentile - a.percentile));
+        }
+      }
+      return 0;
+    }
+
+    async function testCalculation() {
+      try {
+        const data = await fetchData();
+        
+        // Test with a 25-year-old male, 180 lbs, 225 bench press
+        const dataset = data.by_age.male["25"];
+        console.log('Test dataset:', dataset);
+        
+        const percentile = interpolate(dataset, 225);
+        console.log('Calculated percentile:', percentile);
+        
+        document.getElementById('result').innerHTML = `
+          <h3>Test Results:</h3>
+          <p>25-year-old male, 180 lbs, 225 bench press</p>
+          <p>Percentile: ${percentile}th</p>
+          <p>Dataset used: ${JSON.stringify(dataset)}</p>
+        `;
+      } catch (error) {
+        console.error('Test failed:', error);
+        document.getElementById('result').innerHTML = `<p>Error: ${error.message}</p>`;
+      }
+    }
+  </script>
+</body>
+</html> 

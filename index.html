@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bench Press Strength Calculator</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="logo">
+          <i class="fas fa-dumbbell"></i>
+          <h1>Bench Press Strength Calculator</h1>
+        </div>
+        <p class="subtitle">Calculate your strength level and percentile ranking</p>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="calculator-card">
+        <div class="card-header">
+          <i class="fas fa-calculator"></i>
+          <h2>Strength Assessment</h2>
+        </div>
+        
+        <form id="calculator-form" class="calculator-form">
+          <div class="form-group">
+            <label for="gender">
+              <i class="fas fa-venus-mars"></i>
+              Gender *
+            </label>
+            <select id="gender" required>
+              <option value="">Select your gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="age">
+                <i class="fas fa-birthday-cake"></i>
+                Age *
+              </label>
+              <input type="number" id="age" placeholder="Enter your age" min="15" max="90" required />
+              <small class="input-hint">Age range: 15-90 years</small>
+            </div>
+            
+            <div class="form-group">
+              <label for="weight">
+                <i class="fas fa-weight-hanging"></i>
+                Body Weight (lbs) *
+              </label>
+              <input type="number" id="weight" placeholder="Enter your weight" min="110" max="310" required />
+              <small class="input-hint">Weight range: 110-310 lbs</small>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bench">
+              <i class="fas fa-dumbbell"></i>
+              Bench Press Max (lbs) *
+            </label>
+            <input type="number" id="bench" placeholder="Enter your 1RM bench press" min="1" max="1000" required />
+            <small class="input-hint">Bench press range: 1-1000 lbs</small>
+          </div>
+
+          <div class="form-group">
+            <label for="compareBy">
+              <i class="fas fa-chart-line"></i>
+              Compare By *
+            </label>
+            <select id="compareBy" required>
+              <option value="">Choose comparison method</option>
+              <option value="by_age">Age</option>
+              <option value="by_weight">Body Weight</option>
+            </select>
+          </div>
+
+          <button type="submit" class="calculate-btn">
+            <i class="fas fa-calculator"></i>
+            Calculate Strength Level
+          </button>
+        </form>
+      </div>
+
+      <div id="result" class="result-card" style="display: none;">
+        <div class="result-header">
+          <i class="fas fa-trophy"></i>
+          <h3>Your Strength Results</h3>
+        </div>
+        
+        <div class="result-content">
+          <div class="percentile-section">
+            <h4>Percentile Ranking</h4>
+            <div class="percentile-display">
+              <span id="percentile-value">0</span>
+              <span class="percentile-label">th percentile</span>
+            </div>
+            <div class="top-percentile">
+              <span id="top-percent">Top 0%</span>
+              <span class="percentile-explanation">of lifters in your category</span>
+            </div>
+          </div>
+
+          <div class="strength-level-section">
+            <h4>Strength Level</h4>
+            <div class="strength-badge" id="strength-badge">
+              <span id="strength-level">Beginner</span>
+            </div>
+          </div>
+
+          <div class="details-section">
+            <div class="detail-item">
+              <i class="fas fa-info-circle"></i>
+              <span id="comparison-details">Details will appear here</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p>Data sourced from <a href="https://strengthlevel.com/strength-standards/bench-press" target="_blank">Strength Level</a></p>
+    </footer>
+  </div>
+
+  <script>
+    // Simple, working version of the calculator
+    async function fetchData() {
+      try {
+        console.log('Fetching data...');
+        const response = await fetch('data/percentiles.json');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data: ' + response.status);
+        }
+        const data = await response.json();
+        console.log('Data loaded successfully');
+        return data;
+      } catch (error) {
+        console.error('Error:', error);
+        throw error;
+      }
+    }
+
+    function interpolate(data, bench) {
+      if (!data || data.length === 0) return 0;
+      
+      if (bench <= data[0].bench) return data[0].percentile;
+      if (bench >= data[data.length - 1].bench) return data[data.length - 1].percentile;
+      
+      for (let i = 0; i < data.length - 1; i++) {
+        const a = data[i];
+        const b = data[i + 1];
+        
+        if (bench >= a.bench && bench <= b.bench) {
+          const ratio = (bench - a.bench) / (b.bench - a.bench);
+          return Math.round(a.percentile + ratio * (b.percentile - a.percentile));
+        }
+      }
+      return 0;
+    }
+
+    function getStrengthLevel(percentile) {
+      if (percentile >= 95) return { level: "World Class", color: "#FFD700" };
+      if (percentile >= 80) return { level: "Elite", color: "#FF6B35" };
+      if (percentile >= 50) return { level: "Advanced", color: "#4ECDC4" };
+      if (percentile >= 20) return { level: "Intermediate", color: "#45B7D1" };
+      if (percentile >= 5) return { level: "Novice", color: "#96CEB4" };
+      return { level: "Beginner", color: "#FFEAA7" };
+    }
+
+    function getWeightRange(weight) {
+      const ranges = ["110", "120", "130", "140", "150", "160", "170", "180", "190", "200", "210", "220", "230", "240", "250", "260", "270", "280", "290", "300", "310"];
+      let closest = ranges[0];
+      let minDiff = Math.abs(weight - parseInt(closest));
+      
+      for (let range of ranges) {
+        const diff = Math.abs(weight - parseInt(range));
+        if (diff < minDiff) {
+          minDiff = diff;
+          closest = range;
+        }
+      }
+      return closest;
+    }
+
+    function getOrdinalSuffix(num) {
+      const j = num % 10;
+      const k = num % 100;
+      if (j == 1 && k != 11) return num + "st";
+      if (j == 2 && k != 12) return num + "nd";
+      if (j == 3 && k != 13) return num + "rd";
+      return num + "th";
+    }
+
+    // Wait for DOM to load
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('DOM loaded, setting up form...');
+      
+      const form = document.getElementById('calculator-form');
+      if (!form) {
+        console.error('Form not found!');
+        return;
+      }
+
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        console.log('Form submitted!');
+        
+        // Get form values
+        const age = parseInt(document.getElementById('age').value);
+        const weight = parseInt(document.getElementById('weight').value);
+        const gender = document.getElementById('gender').value;
+        const bench = parseInt(document.getElementById('bench').value);
+        const compareBy = document.getElementById('compareBy').value;
+        
+        console.log('Form values:', { age, weight, gender, bench, compareBy });
+        
+        // Validate inputs
+        if (!age || !weight || !gender || !bench || !compareBy) {
+          alert('Please fill in all required fields');
+          return;
+        }
+        
+        // Validate ranges
+        if (age < 15 || age > 90) {
+          alert('Age must be between 15 and 90 years');
+          return;
+        }
+        
+        if (weight < 110 || weight > 310) {
+          alert('Weight must be between 110 and 310 lbs');
+          return;
+        }
+        
+        if (bench < 1 || bench > 1000) {
+          alert('Bench press must be between 1 and 1000 lbs');
+          return;
+        }
+        
+        // Additional realistic validation
+        if (bench > weight * 2) {
+          alert('Bench press cannot be more than twice your body weight. Please check your input.');
+          return;
+        }
+        
+        if (bench < weight * 0.1) {
+          alert('Bench press seems very low for your weight. Please check your input.');
+          return;
+        }
+        
+        try {
+          const data = await fetchData();
+          let dataset;
+          let comparisonDetails = '';
+          
+          if (compareBy === "by_age") {
+            const ages = Object.keys(data.by_age[gender]).map(Number).sort((a, b) => a - b);
+            let closestAge = ages[0];
+            let minDiff = Math.abs(age - closestAge);
+            
+            for (let ageKey of ages) {
+              const diff = Math.abs(age - ageKey);
+              if (diff < minDiff) {
+                minDiff = diff;
+                closestAge = ageKey;
+              }
+            }
+            
+            dataset = data.by_age[gender][closestAge.toString()];
+            comparisonDetails = `Compared to ${gender}s aged ${closestAge} years`;
+            
+          } else if (compareBy === "by_weight") {
+            const weightRange = getWeightRange(weight);
+            dataset = data.by_weight[gender][weightRange];
+            comparisonDetails = `Compared to ${gender}s weighing around ${weightRange} lbs`;
+          }
+          
+          const percentile = interpolate(dataset, bench);
+          const strengthInfo = getStrengthLevel(percentile);
+          
+          console.log('Results:', { percentile, strengthInfo });
+          
+          // Update the result display
+          document.getElementById('percentile-value').textContent = getOrdinalSuffix(percentile);
+          document.getElementById('strength-level').textContent = strengthInfo.level;
+          document.getElementById('comparison-details').textContent = comparisonDetails;
+          
+          // Calculate and display top percentage
+          const topPercent = 100 - percentile;
+          let topPercentText;
+          if (topPercent <= 1) {
+            topPercentText = `Top ${topPercent.toFixed(1)}%`;
+          } else if (topPercent <= 5) {
+            topPercentText = `Top ${topPercent.toFixed(1)}%`;
+          } else {
+            topPercentText = `Top ${Math.round(topPercent)}%`;
+          }
+          document.getElementById('top-percent').textContent = topPercentText;
+          
+          // Update strength badge styling
+          const strengthBadge = document.getElementById('strength-badge');
+          strengthBadge.style.backgroundColor = strengthInfo.color;
+          strengthBadge.style.color = strengthInfo.level === "World Class" || strengthInfo.level === "Elite" ? "white" : "#333";
+          
+          // Show the result
+          document.getElementById('result').style.display = 'block';
+          document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+          
+          console.log('Results displayed successfully');
+          
+        } catch (error) {
+          console.error('Calculation error:', error);
+          alert('Error: ' + error.message);
+        }
+      });
+      
+      console.log('Form setup complete');
+    });
+  </script>
+</body>
+</html>
